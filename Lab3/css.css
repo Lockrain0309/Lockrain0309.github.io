@@ -1,0 +1,36 @@
+nav.navbar {font-weight: bold;
+	color: white;
+	border: 2px solid grey;
+	text-align: center;
+	width: 50em;
+	background-color: black;
+	text-align: center;
+	}
+h1{font-weight: bold;}
+body{padding: 20px 20px 20px 20px;
+	font-family: Arial;
+	background-color:pink;
+	color: white;
+	font-size: 20px}
+nav.navbar ul{display: none;
+		list-style: none;
+		margin: 2;
+		top: 20px;
+		left: 30%;
+		width: 50%;
+		position: center;
+		}
+nav.navbar:hover ul{display: block;}
+nav.navbar ul li{border-top: 2px solid grey;
+		  background-color: white;
+		  margin-top: 1px;
+		  margin-bottom: 1px;
+		  margin-left: 1px;
+		  margin-right:1px ;
+		  padding: 10px 10px 10px 10px;
+		  width: 44em;
+		  text-align: center;
+		}
+nav.navbar ul li:hover{background-color: lightgrey;}
+nav.navbar ul li:active{color:blue;background-color:lightgreen;}
+a {text-decoration: none;}
