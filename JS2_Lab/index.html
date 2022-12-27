@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript"></script>
+</head>
+<body>
+	<form action = "#">
+		<input id = "rollButton" type = "button" value = "Roll Dice">
+		<p></p>
+	<form>
+
+		<img id="die1" src="die1.png" alt="blank image" value=1>
+		<img id="die2" src="die1.png" alt="blank image" value=1>
+		<img id="die3" src="die1.png" alt="blank image" value=1>
+		<img id="die4" src="die1.png" alt="blank image" value=1>
+		<img id="die5" src="die1.png" alt="blank image" value=1>
+		<img id="die6" src="die1.png" alt="blank image" value=1>
+		<p></p>
+		<img id="die7" src="die1.png" alt="blank image" value=1>
+		<img id="die8" src="die1.png" alt="blank image" value=1>
+		<img id="die9" src="die1.png" alt="blank image" value=1>
+		<img id="die10" src="die1.png" alt="blank image" value=1>
+		<img id="die11" src="die1.png" alt="blank image" value=1>
+		<img id="die12" src="die1.png" alt="blank image" value=1>
+
+		<div id ="frequencyTableDiv"></div>
+		<script>
+			var s1 = 0;
+			var s2 = 0;
+			var s3 = 0;
+			var s4 = 0;
+			var s5 = 0;
+			var s6 = 0;
+			var total = s1 + s2 +s3 +s4 +s5 +s6;
+			window.addEventListener("load",start);
+
+			function start(){
+				var button = document.getElementById("rollButton");
+				button.addEventListener("click",rollDice);
+				die1Image = document.getElementById("die1");
+				die2Image = document.getElementById("die2");
+				die3Image = document.getElementById("die3");
+				die4Image = document.getElementById("die4");
+				die5Image = document.getElementById("die5");
+				die6Image = document.getElementById("die6");
+				die7Image = document.getElementById("die7");
+				die8Image = document.getElementById("die8");
+				die9Image = document.getElementById("die9");
+				die10Image = document.getElementById("die10");
+				die11Image = document.getElementById("die11");
+				die12Image = document.getElementById("die12");
+				updateFrequenctTable();
+			}
+
+			function rollDice(){
+				setImage(die1Image);
+				setImage(die2Image);
+				setImage(die3Image);
+				setImage(die4Image);
+				setImage(die5Image);
+				setImage(die6Image);
+				setImage(die7Image);
+				setImage(die8Image);
+				setImage(die9Image);
+				setImage(die10Image);
+				setImage(die11Image);
+				setImage(die12Image);
+			}
+
+			function setImage(dieImg){
+				var dieValue = Math.floor(1 + Math.random()*6);
+
+				dieImg.setAttribute("src","die"+ dieValue +".png");
+				dieImg.setAttribute("alt","die image with"+ dieValue +"spot(s)");
+				dieImg.setAttribute("value",dieValue);
+				tallyRolls(dieValue);
+			}
+
+			function tallyRolls(face){
+				switch(face){
+				case 1:
+					s1++;
+					break;
+				case 2:
+					s2++;
+					break;
+				case 3:
+					s3++;
+					break;
+				case 4:
+					s4++;
+					break;
+				case 5:
+					s5++;
+					break;
+				case 6:
+					s6++;
+					break;
+				}
+
+			}
+
+
+
+
+
+			function updateFrequenctTable(){
+				var tableDiv = document.getElementById("frequencyTableDiv");
+				tableDiv.innerHTML = "<table>"+"<thead><th>Face</th><th>Frequency</th>"+"<th>Percent</th></thread>"+"<tbody><tr><td>1</td><td>" + s1 +"</td><td>"+ Math.floor((s1)/total*100)+"%"+"</td></tr>"+
+				"<tr><td>2</td><td>" + s2 +"</td><td>"+ Math.floor((s2)/total*100)+"%"+"</td></tr>"+
+				"<tr><td>3</td><td>" + s3 +"</td><td>"+ Math.floor((s3)/total*100)+"%"+"</td></tr>"+
+				"<tr><td>4</td><td>" + s4 +"</td><td>"+ Math.floor((s4)/total*100)+"%"+"</td></tr>"+
+				"<tr><td>5</td><td>" + s5 +"</td><td>"+ Math.floor((s5)/total*100)+"%"+"</td></tr>"+
+				"<tr><td>6</td><td>" + s6 +"</td><td>"+ Math.floor((s6)/total*100)+"%"+"</td></tr>"+
+				"</body></table>"
+			}
+
+			window.addEventListener("load",start,false);
+		</script>
+
+		
+</body>
+</html>
