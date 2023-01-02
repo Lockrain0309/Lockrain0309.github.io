@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var data = window.prompt("input data");
+		var char = window.prompt("input a char to search");
+		var answer = parseInt(data.indexOf(char));
+		document.write("answer is" + answer);
+		while(answer != data.lastIndexOf(char)){
+			document.write(data.indexOf(char,answer+1));
+			answer += 1;
+			if(answer == data.lastIndexOf(char)){
+				break;
+			}
+		}
+	</script>
+
+</body>
+</html>
